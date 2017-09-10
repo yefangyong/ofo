@@ -25,3 +25,7 @@ Route::post('api/:version/user/wallet','api/:version.user/getUserInfo');
 Route::post('api/:version/user/pay','api/:version.user/pay');
 Route::post('api/:version/user/refund','api/:version.user/refund');
 Route::post('api/:version/user/record','api/:version.user/record');
+
+//trouble
+Route::post('api/:version/trouble/record','api/:version.TroubleRecord/recordTrouble');
+Route::post('api/:version/trouble','api/:version.troubleCate/getTroubleCate');

@@ -32,16 +32,35 @@ class Bike extends Base
      * @param $id
      * 修改单车的使用状态
      */
-    public function updateBikeStatus($id) {
-        (new IsMustBePostiveInt())->goCheck();
-        $data = [
-            'is_show'=>1
-        ];
+    public function updateBikeStatus($type = 0,$id) {
+//        (new IsMustBePostiveInt())->goCheck();
+        if($type == 0) {
+            //锁定单车，单车在被使用中
+            $data = [
+                'is_show'=>1
+            ];
+        }elseif ($type == 1) {
+            //释放单车，单车恢复使用
+            $data = [
+                'is_show'=>0
+            ];
+        }elseif ($type == 2) {
+            //单车出现故障
+            $data = [
+                'type'=>1
+            ];
+        }elseif ($type == 3) {
+            //单车恢复正常
+            $data = [
+                'type'=>0
+            ];
+        }
+
         $res = \app\api\model\Bike::update($data,['id'=>$id]);
         if($res) {
-            echo 'success';
+            return true;
         }else {
-            echo 'error';
+            echo false;
         }
     }
 
@@ -52,7 +71,7 @@ class Bike extends Base
      * 根据单车的ID获取单车的信息
      */
     public function getBikeByID($id) {
-        (new IsMustBePostiveInt())->goCheck();
+//        (new IsMustBePostiveInt())->goCheck();
         $bike = BikeModel::getBikeByID($id);
         if(!$bike) {
             throw new BikeException([
