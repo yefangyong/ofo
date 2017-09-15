@@ -7,7 +7,7 @@
  * Time: 15:46
  */
 return [
-    'app_id'=>'wxa1352690d1c0904f',
-    'app_secret'=>'55554158847ba36f944a385cf8d4cb4a',
+    'app_id'=>'填写自己的app_id',
+    'app_secret'=>'填写自己的app_secret',
     'login_url'=>'https://api.weixin.qq.com/sns/jscode2session?appid=%s&secret=%s&js_code=%s&grant_type=authorization_code'
 ];
