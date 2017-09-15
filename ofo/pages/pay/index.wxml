@@ -1,0 +1,11 @@
+<view class="">
+  <view class="top">关锁后请打乱密码,注意检查车篮,带好随身物品</view>
+  <view class="distance">本次行程需要支付(元)</view>
+  <view class="price">{{price}}.00</view>
+  <view class="middle">
+    <view class="total-fee">总费用:{{price}}元</view>
+    <view class="discount">未使用优惠券></view>
+  </view>
+  <view class="pay" bindtap="pay">确认支付</view>
+  
+</view>

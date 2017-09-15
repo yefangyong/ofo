@@ -1,0 +1,37 @@
+/* index.wxss */
+
+.top {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 30rpx;
+  margin: 30px;
+  color: #169e99;
+}
+
+.middle {
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 30rpx;
+  margin: 20px 20px 40px;
+}
+
+.scan {
+  text-align: center;
+  height: 80rpx;
+  margin: 0 auto;
+  width: 80%;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background-color: #f5f804;
+}
+
+.bottom {
+  text-align: center;
+  height: 80rpx;
+  margin: 30rpx auto;
+  width: 80%;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  border:1rpx solid #93938d;
+}
+

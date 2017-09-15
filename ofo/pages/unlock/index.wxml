@@ -1,0 +1,10 @@
+<view class="">
+  <view class="text-box">
+    
+      <view class="top">您是有押金用户,可以正常用车</view>
+      <view class="middle">请规范用车,用完记得结束行程</view>
+      <view class="scan" bindtap="scan" >扫码骑车</view>
+      <view class="bottom" bindtap="changeType">手动输入</view>
+    
+  </view>
+</view>

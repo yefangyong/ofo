@@ -1,0 +1,33 @@
+/* index.wxss */
+.input-top{
+  text-align: center;
+  margin: 40rpx auto;
+  border-radius: 20rpx;
+  background-color: #9c9a9a;
+  font-size: 30rpx;
+  width: 40%;
+}
+
+.input-tips{
+  text-align: center;
+  font-size: 20rpx;
+  color: red;
+}
+.input-num {
+  text-align: center;
+  margin: 20rpx auto; 
+  height: 80rpx;
+  width: 80%;
+  border-radius: 40rpx;
+  border:1rpx solid #f5f804;
+}
+
+.input-bottom {
+  text-align: center;
+  height: 80rpx;
+  margin: 30rpx auto;
+  width: 80%;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  background-color:#f5f804; 
+}

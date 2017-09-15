@@ -1,0 +1,54 @@
+.top {
+  font-size: 30rpx;
+  height: 70rpx;
+  width: 100%;
+  color: #d43e5d;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #d7e482;
+}
+
+.distance {
+  text-align: center;
+  margin-top:80rpx;
+  height: 10rpx;
+  font-size: 30rpx;
+  color: #b3b3b1;
+}
+
+.price {
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 80rpx;
+  font-weight: bold;
+}
+
+.middle {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin-top: 50rpx;
+  margin-bottom: 80rpx;
+  padding: 0 100rpx 0 100rpx;
+}
+
+.total-fee {
+  color: #b3b3b1;
+  font-size: 30rpx;
+}
+
+.discount {
+  color:#d43e5d;
+  font-size: 30rpx; 
+}
+
+.pay {
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 40rpx;
+  background-color: #f5f804;
+  box-shadow: 0 10rpx 0 #d4d630;
+}

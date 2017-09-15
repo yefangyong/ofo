@@ -1,0 +1,6 @@
+<view>
+      <view class="input-top">计费说明:1元/小时</view>
+      <view class="input-tips">温馨提示:若输错车牌号,将无法打开车锁</view>
+      <input class="input-num" bindinput="numberChange" name="number" focus="true" placeholder="请输入车牌号" type="number" />
+      <view class="input-bottom" bindtap="userBike">立即用车</view>
+  </view>

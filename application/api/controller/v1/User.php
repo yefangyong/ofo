@@ -148,7 +148,5 @@ class User extends Base
         }catch (Exception $e) {
             Db::rollback();
         }
-
-
     }
 }
