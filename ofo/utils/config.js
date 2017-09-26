@@ -3,6 +3,6 @@ class Config {
 
   }
 }
-Config.baseUrl = "http://www.ofo.com/qpi/v1/";
+Config.baseUrl = "https://30166482.qcloud.la/index.php/api/v1/";
 
 export{Config};

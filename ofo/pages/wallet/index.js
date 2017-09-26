@@ -1,4 +1,6 @@
 // pages/wallet/index.js
+import { Base } from '../../utils/base.js';
+var base = new Base();
 Page({
   data:{
     from: 'wallet',
@@ -15,19 +17,18 @@ Page({
 
   _loadData() {
     var that = this;
-    var token = wx.getStorageSync('token');
-    wx.request({
-      url: 'https://30166482.qcloud.la/index.php/api/v1/user/wallet',
+    var params = {
+      url:'user/wallet',
       method:'post',
-      header:{
-        'token':token
-      },
-      success:function(res){
+      sCallBack:function(res){
+        console.log(res);
         that.setData({
-          userInfo:res.data,
+          userInfo: res.data,
         });
       }
-    });
+    };
+
+    base.request(params);
   },
 // 页面加载完成，更新本地存储的overage
   onReady:function(){
@@ -87,26 +88,27 @@ Page({
       confirmColor: "#ccc",
       success: (res) => {
         if(res.confirm){
-          wx.request({
-            url: 'https://30166482.qcloud.la/index.php/api/v1/user/refund',
-            header:{
-              token:wx.getStorageSync('token')
-            },
+
+          var params = {
+            url:'user/refund',
             method:'post',
-            success:function(res) {
-            wx.setStorageSync('guarantee', 0.00);
-             wx.showModal({
-               title: '操作成功',
-               content: '押金已经退还到您的钱包中，注意查收',
-               showCancel:true,
-               success:function(res){
-                 wx.switchTab({
-                   url: '../index/index',
-                 })
-               }
-             })
+            sCallBack:function(res){
+              wx.setStorageSync('guarantee', 0.00);
+              wx.showModal({
+                title: '操作成功',
+                content: '押金已经退还到您的钱包中，注意查收',
+                showCancel: true,
+                success: function (res) {
+                  wx.switchTab({
+                    url: '../index/index',
+                  })
+                }
+              });
             }
-          });
+          };
+          
+          base.request(params);
+
         }
       }
     });

@@ -1,4 +1,6 @@
 // pages/my/index.js
+import { Base } from '../../utils/base.js';
+var base = new Base();
 Page({
   data:{
     // 用户信息
@@ -51,14 +53,10 @@ Page({
       })
     }
   if(wx.getStorageSync('token')) {
-    var token = wx.getStorageSync('token');
-    wx.request({
-      url: 'https://30166482.qcloud.la/index.php/api/v1/token/verify',
-      method: 'post',
-      header: {
-        token: token
-      },
-      success: function (res) {
+    var params = {
+      url:'token/verify',
+      method:'post',
+      sCallBack:(res)=>{
         if (res.statusCode == '401') {
           that.setData({
             userInfo: {
@@ -68,14 +66,9 @@ Page({
             bType: "primary",
             actionText: "登录"
           });
-          // wx.showModal({
-          //   title: '用车失败',
-          //   content: '登录已过期，请重新登录',
-          //   showCancel: false,
-          // });
         }
       }
-    });
+    }
     }
   },
 
@@ -91,38 +84,36 @@ Page({
       var that = this;
       wx.login({
         success: (res) => {
-          console.log(res);
-          wx.request({
-            url: 'https://30166482.qcloud.la/index.php/api/v1/token/user',
-            header: {
-              'Content-Type': 'application/json'
-            },
+          var params = {
+            url:'token/user',
             method:'post',
-            data:{code:res.code},
-            success:function(rel) {
-              wx.setStorageSync('login',true);
+            data:{
+              code:res.code
+            },
+            sCallBack:(rel)=>{
+              wx.setStorageSync('login', true);
               console.log(rel.data.token);
               wx.setStorageSync('token', rel.data.token);
               //把余额和保证金存储到缓存中
               var that = this;
-              var token = wx.getStorageSync('token');
-              wx.request({
-                url: 'https://30166482.qcloud.la/index.php/api/v1/user/wallet',
-                method: 'post',
-                header: {
-                  'token': token
-                },
-                success: function (res) {
+              var params = {
+                url:'user/wallet',
+                method:'post',
+                sCallBack:(res)=>{
                   wx.setStorageSync('balance', res.data.balance);
                   wx.setStorageSync('guarantee', res.data.guarantee);
                 }
-              });
+              };
+              base.request(params);
             }
-          });
+          };
+          base.request(params);
+
           wx.hideLoading();
           wx.getUserInfo({
             withCredentials: false,
             success: (res) => {
+              console.log(res);
               this.setData({
                 userInfo: {
                   avatarUrl: res.userInfo.avatarUrl,
@@ -167,36 +158,8 @@ Page({
   },
 // 跳转至钱包
   movetoWallet: function(){
-    // var that = this;
-    // var token = wx.getStorageSync('token');
-    // wx.request({
-    //   url: 'https://30166482.qcloud.la/index.php/api/v1/user/wallet',
-    //   method: 'post',
-    //   header: {
-    //     'token': token
-    //   },
-    //   success: function (res) {
-    //     if (res.data.guarantee == 0){
-    //       wx.showModal({
-    //         title: '请先充值',
-    //         content: '您的押金为0，请先充值199元',
-    //         success: function(res) {
-    //           wx.redirectTo({
-    //             url: '../charge/index'+"?from="+that.data.from,
-    //           })
-    //         },
-    //         fail: function(res) {},
-    //         complete: function(res) {},
-    //       })
-    //     }else {
           wx.navigateTo({
             url: '../wallet/index',
           });
-        }
-  //     }
-  //   });
-  // },
-
-  
-    
+        }   
 })

@@ -1,4 +1,5 @@
-// pages/billing/index.js
+import {Base} from '../../utils/base.js';
+var base = new Base();
 Page({
   data:{
     hours: 0,
@@ -10,13 +11,14 @@ Page({
   onLoad:function(options){
     console.log(options.number);
     //改变单车的状态
-    wx.request({
-      url: 'https://30166482.qcloud.la/index.php/api/v1/bike/status',
+    var params = {
+      url:'bike/status',
       method:'post',
       data:{
         id:options.number
       }
-    })
+    };
+    base.request(params);
     wx.setStorageSync('time', true);
     // 获取车牌号，设置定时器
     this.setData({

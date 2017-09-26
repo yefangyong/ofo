@@ -5,9 +5,9 @@ class Base {
   }
 
 //封装好的请求方法
-  requet(params) {
-    if(!params.type) {
-      params.type = "GET";
+  request(params) {
+    if(!params.method) {
+      params.method = "GET";
     }
 
     wx.request({
@@ -17,12 +17,12 @@ class Base {
         'content-type':'application/json',
         'token':wx.getStorageSync('token')
       },
-      method: params.type,
+      method: params.method,
       success: function(res) {
-        sCallBack && sCallBack(res);
+        params.sCallBack && params.sCallBack(res);
       },
       fail: function(res) {
-        console.log(res);
+       eCallBack && eCallBack(res);
       },
       complete: function(res) {},
     })
