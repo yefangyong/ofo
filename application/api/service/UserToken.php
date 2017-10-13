@@ -10,6 +10,7 @@ namespace app\api\service;
 
 
 use app\api\model\User;
+use app\lib\exception\WxChatException;
 use app\lib\exception\WxException;
 use think\Exception;
 
@@ -22,6 +23,7 @@ class UserToken extends Token
     protected $wx_login_url;
 
     public $code;
+    protected $nickname;
 
     public function __construct($code)
     {
@@ -99,7 +101,7 @@ class UserToken extends Token
      * 处理微信登录的错误
      */
     public function processLoginError($result) {
-        throw new WxException([
+        throw new WxChatException([
             'msg'=>$result['errmsg'],
             'errCode'=>$result['errcode']
         ]);

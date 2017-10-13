@@ -9,6 +9,28 @@
 // | Author: 流年 <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+/**
+ * @param $url
+ * @param $type 1|post方式 0|get方式
+ * @param array $data
+ */
+function doCurl($url,$type = 0,$data=[]) {
+    $cu = curl_init(); //初始化
+    //设置选项
+    curl_setopt($cu,CURLOPT_URL,$url); //设置url
+    curl_setopt($cu,CURLOPT_RETURNTRANSFER,1); //信息以文件流的方式保存，而不是直接输出
+    curl_setopt($cu,CURLOPT_HEADER,0); //不包括header头部信息
+    if($type == 1) {
+        //post
+        curl_setopt($cu,CURLOPT_POST,1);
+        curl_setopt($cu,CURLOPT_POSTFIELDS,$data);
+    }
+    //执行并获取内容
+    $output = curl_exec($cu);
+    //释放curl句柄
+    curl_close($cu);
+    return $output;
+}
 // 应用公共文件
 /**
  * @param $url
@@ -42,3 +64,58 @@ function getRandChars($length) {
     }
     return $str;
 }
+
+/**
+ * @param $status
+ * @param $message
+ * @param array $data
+ * 公用的展示方法
+ */
+function show($status,$message,$data =array()){
+    $result = [
+        'status'=>$status,
+        'message'=>$message,
+        'data'=>$data
+    ];
+    exit(json_encode($result));
+}
+
+/**
+ * @param $code
+ * @return string
+ * 车辆的使用情况
+ */
+function userStatus($code) {
+    if($code == 0) {
+        return '未使用';
+    }else {
+        return "使用中";
+    }
+}
+
+/**
+ * @param $code
+ * @return string
+ * 车辆是否发生故障
+ */
+function troubleStatus($code) {
+    if($code == 0) {
+        return "正常";
+    }else {
+        return "故障";
+    }
+}
+
+/**
+ * @param $value
+ * @return string
+ * 单车的修理状态
+ */
+ function getStatusAttr($value) {
+    if($value == 0) {
+        return $value = '待修理';
+    }elseif($value == 1) {
+        return $value = '已修理';
+    }
+}
+

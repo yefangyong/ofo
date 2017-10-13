@@ -1,0 +1,32 @@
+{include file="public/header" /}
+<body>
+<article class="page-container">
+    <form class="form form-horizontal" id="yfycms-form">
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>车辆密码：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="password" class="input-text" value="" placeholder="请输入车辆的密码" id="password" name="password">
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>所在位置：</label>
+            <div class="formControls col-xs-8 col-sm-9">
+                <input type="text" class="input-text" value="" placeholder="请输入车辆的位置" id="username" name="address">
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+                <input class="btn btn-primary radius" type="button" id="yfycms-button-submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</article>
+<script>
+    var SCOPE = {
+        'save_url':"{:url('bike/add')}",
+        'jump_url':"{:url('bike/index')}"
+    };
+</script>
+{include file="public/footer" /}
+</body>
+</html>

@@ -1,0 +1,7 @@
+.tp5 >ul>li{
+    display: inline-block;
+    width:20px;
+    color: #337ab7;
+    text-align: center;
+    margin-left: 5px;
+}
