@@ -7,5 +7,5 @@
  */
 return [
     'page'=>1,
-    'list_rows'=>10
+    'list_rows'=>4
 ];
