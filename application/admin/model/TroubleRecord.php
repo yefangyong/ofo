@@ -38,11 +38,11 @@ class TroubleRecord extends Model
         return self::order('create_time','desc')->with(['troubleCate','user','troubleCate'])->paginate(config('pagination.list_rows'))->each(function($item,$key){
             $lnt = $item->latitude;
             $lgt = $item->longitude;
-            $result = \Map::getAddress($lnt,$lgt);
-            if($result['status'] == 2) {
+            $result = \TxMap::getAddress($lgt,$lnt);
+            if($result['status'] != 0) {
                 $item->address = '' ;
             }else {
-                $item->address = $result['result']['formatted_address'];
+                $item->address = $result['result']['formatted_addresses']['recommend'];
             }
             return $item;
         });

@@ -40,19 +40,19 @@ class Record extends Model
         return self::order('create_time','desc')->with(['bike','user'])->paginate(config('pagination.list_rows'))->each(function($item,$key){
             $slnt = $item->start_lati;
             $slgt = $item->start_long;
-            $sresult = \Map::getAddress($slnt,$slgt);
-            if($sresult['status'] == 2) {
+            $sresult =  \TxMap::getAddress($slgt,$slnt);
+            if($sresult['status'] !=0) {
                 $item->start_address = '' ;
             }else {
-                $item->start_address = $sresult['result']['formatted_address'];
+                $item->start_address = $sresult['result']['formatted_addresses']['recommend'];
             }
             $elnt = $item->end_lati;
             $elgt = $item->end_long;
-            $eresult = \Map::getAddress($elnt,$elgt);
-            if($eresult['status'] == 2) {
+            $eresult = \TxMap::getAddress($elgt,$elnt);
+            if($eresult['status'] !=0) {
                 $item->end_address = '' ;
             }else {
-                $item->end_address = $eresult['result']['formatted_address'];
+                $item->end_address = $eresult['result']['formatted_addresses']['recommend'];
             }
             return $item;
             });

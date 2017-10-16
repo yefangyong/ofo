@@ -17,8 +17,8 @@ class Bike extends Model
         return self::order('create_time','desc')->paginate(config('pagination.list_rows'))->each(function ($item, $key){
             $lnt = $item->latitude;
             $lgt = $item->longitude;
-            $result = \Map::getAddress($lnt,$lgt);
-            $item->address = $result['result']['formatted_address'];
+            $result = \TxMap::getAddress($lgt,$lnt);
+            $item->address = $result['result']['formatted_addresses']['recommend'];
             return $item;
         });
     }

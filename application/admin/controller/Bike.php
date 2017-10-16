@@ -25,7 +25,7 @@ class Bike extends Controller
             if(empty($passwd) || empty($address)) {
                 return show(0,'请填写密码或者地址');
             }
-            $result = \Map::getLngLat($address);
+            $result = \TxMap::getLngLat($address);
             $lat = $result['result']['location']['lat'];
             $lng = $result['result']['location']['lng'];
             $data = [
