@@ -42,6 +42,7 @@ class Bike extends Controller
                 return show(0,'添加失败');
             }
         }else {
+
             return $this->fetch();
         }
 
