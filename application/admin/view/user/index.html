@@ -10,6 +10,7 @@
                 <th width="40"><input name="" type="checkbox" value=""></th>
                 <th width="80">ID</th>
                 <th width="100">用户昵称</th>
+                <th width="100">用户头像</th>
                 <th width="30">押金余额</th>
                 <th width="150">充值余额</th>
                 <th width="60">创建时间</th>
@@ -21,7 +22,8 @@
             <tr class="text-c">
                 <td><input name="" type="checkbox" value="{$vo.id}"></td>
                 <td>{$vo.id}</td>
-                <td>{$vo.openid}</td>
+                <td>{$vo.nickname}</td>
+                <td><img src="{$vo.avatarUrl}" width="100" height="100"></td>
                 <td class="td-status"><span class="label label-success radius">{$vo.guarantee}</span></td>
                 <td class="td-status"><span class="label label-success radius">{$vo.balance}</span></td>
                 <td>{$vo.create_time}</td>

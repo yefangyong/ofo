@@ -1,6 +1,4 @@
 // index.js
-import { Base } from '../../utils/base.js';
-var base = new Base();
 Page({
 
   /**
@@ -26,10 +24,13 @@ Page({
   pay:function(){
     var that = this;
     if ((wx.getStorageSync('balance')-this.data.price)>=0){
-      var params = {
-        url:'user/record',
-        method:'post',
-        data:{
+      wx.request({
+        url: 'https://72988837.qcloud.la//index.php/api/v1/user/record',
+        method: 'post',
+        header: {
+          token: wx.getStorageSync('token')
+        },
+        data: {
           'start_time': wx.getStorageSync('start_time'),
           'end_time': wx.getStorageSync('end_time'),
           'start_long': wx.getStorageSync('start_long'),
@@ -39,10 +40,10 @@ Page({
           'price': this.data.price,
           'bikeID': this.data.bikeID
         },
-        sCallBack:(res)=>{
+        success: function (res) {
           //更新余额的缓存
           var balance = wx.getStorageSync('balance');
-          var price = balance - that.data.price;
+          var price =balance - that.data.price;
           wx.setStorageSync('balance', price);
           //清除时间和位置的缓存
           wx.removeStorageSync('end_time');
@@ -55,18 +56,15 @@ Page({
             title: '支付成功',
             icon: 'success',
             duration: 6000,
-            success: function (res) {
+            success: function(res) {
               wx.switchTab({
                 url: '../index/index',
               })
             },
 
-          });
+          })
         }
-      }
-      
-      base.request(params);
-
+      });
     }else {
       wx.showModal({
         title: '支付失败',

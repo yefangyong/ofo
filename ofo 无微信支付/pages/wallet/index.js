@@ -1,6 +1,4 @@
 // pages/wallet/index.js
-import { Base } from '../../utils/base.js';
-var base = new Base();
 Page({
   data:{
     from: 'wallet',
@@ -17,18 +15,20 @@ Page({
 
   _loadData() {
     var that = this;
-    var params = {
-      url:'user/wallet',
+    var token = wx.getStorageSync('token');
+    wx.request({
+      url: 'https://72988837.qcloud.la/index.php/api/v1/user/wallet',
       method:'post',
-      sCallBack:function(res){
+      header:{
+        'token':token
+      },
+      success:function(res){
         console.log(res);
         that.setData({
-          userInfo: res.data,
+          userInfo:res.data,
         });
       }
-    };
-
-    base.request(params);
+    });
   },
 // 页面加载完成，更新本地存储的overage
   onReady:function(){
@@ -88,27 +88,26 @@ Page({
       confirmColor: "#ccc",
       success: (res) => {
         if(res.confirm){
-
-          var params = {
-            url:'user/refund',
+          wx.request({
+            url: 'https://72988837.qcloud.la/index.php/api/v1/user/refund',
+            header:{
+              token:wx.getStorageSync('token')
+            },
             method:'post',
-            sCallBack:function(res){
-              wx.setStorageSync('guarantee', 0.00);
-              wx.showModal({
-                title: '操作成功',
-                content: '押金已经退还到您的钱包中，注意查收',
-                showCancel: true,
-                success: function (res) {
-                  wx.switchTab({
-                    url: '../index/index',
-                  })
-                }
-              });
+            success:function(res) {
+            wx.setStorageSync('guarantee', 0.00);
+             wx.showModal({
+               title: '操作成功',
+               content: '押金已经退还到您的钱包中，注意查收',
+               showCancel:true,
+               success:function(res){
+                 wx.switchTab({
+                   url: '../index/index',
+                 })
+               }
+             })
             }
-          };
-          
-          base.request(params);
-
+          });
         }
       }
     });

@@ -1,7 +1,5 @@
 // pages/wallet/index.js
 const AV = require('../../utils/av-weapp-min.js'); 
-import { Base } from '../../utils/base.js';
-var base = new Base();
 Page({
   data:{
     // 故障车周围环境图路径数组
@@ -27,10 +25,10 @@ Page({
     });
     
     //获取故障的类型
-    var params = {
-      url:'trouble',
+    wx.request({
+      url: 'https://72988837.qcloud.la//index.php/api/v1/trouble',
       method:'post',
-      sCallBack:(res)=>{
+      success:function(res) {
         let data = res.data.map((item, index, arr) => {
           return {
             "id": item.id,
@@ -42,8 +40,7 @@ Page({
           itemsValue: data
         });
       }
-    }
-    base.request(params);
+    })
   },
 // 勾选故障类型，获取类型值存入checkboxValue
   checkboxChange: function(e){
@@ -98,37 +95,38 @@ Page({
 
     console.log(this.data.record);
     if(this.data.checkboxValue.length> 0){
-      var params = {
-        url:'trouble/record',
-        data:{
+      wx.request({
+        url: 'https://72988837.qcloud.la//index.php/api/v1/trouble/record',
+        data: {
           record:this.data.record
         },
-        method:'post',
-        sCallBack:(res)=>{
+        method: 'post', // POST
+        header:{
+          'content-type':'application/json',
+          'token':wx.getStorageSync('token')
+        },
+        success: function(res){
           console.log(res);
-          if (res.statusCode == '401') {
+          if(res.statusCode == '401') {
             wx.showModal({
               title: '提交失败',
               content: res.data.msg,
               showCancel: false,
             });
-          } else {
+          }else {
             wx.showModal({
               title: '提交成功',
               content: "谢谢您的反馈",
               showCancel: false,
               success: function (res) {
                 wx.navigateBack({
-                  delta: 1
+                  delta:1
                 })
               },
             });
           }
         }
-      };
-      
-      base.request(params);
-      
+      })
     }else{
       wx.showModal({
         title: '提交失败',

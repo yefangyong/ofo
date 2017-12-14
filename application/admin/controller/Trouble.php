@@ -14,8 +14,9 @@ use app\admin\model\TroubleCate;
 use app\admin\model\TroubleRecord;
 use think\Controller;
 
-class Trouble extends Controller
+class Trouble extends Base
 {
+    public $model = 'trouble_record';
     /**
      * @return mixed
      * 故障列表

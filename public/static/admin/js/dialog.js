@@ -1,5 +1,5 @@
 
-    var dialog = {
+    var dialogs = {
         // 错误弹出层
         error: function(message) {
             layer.open({
