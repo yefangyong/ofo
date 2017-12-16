@@ -113,20 +113,20 @@ PRIMARY KEY (`id`)
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 |
 ```
-#**核心知识体系：**
-##1.thinkphp5.0相关的知识
+# 核心知识体系
+## 1.thinkphp5.0相关的知识
 * TP5三大核心：路由、控制器、模型
 * 以ORM的方式查询数据库
 * 使用TP5验证器Validate构建整个验证层
 * 开发环境和生产环境下不同的全局异常处理机制
 * TP5缓存的使用
 * 在TP5中使用数据库事务
-##2.微信小程序＋微信支付
+## 2.微信小程序＋微信支付
 * 微信小程序登录状态维护
 * 微信支付接入
 * Class和Module面向对象的思维构建前端代码
 * 体验优化
-##3.API接口的设计
+## 3.API接口的设计
 * 采用RESTFul API风格
 * （RESTFul API风格可参考GitHub 开发者文档）
 * 返回码、URL语义、HTTP动词、错误码、异常返回
@@ -134,7 +134,7 @@ PRIMARY KEY (`id`)
 * API版本控制（v1、v2）
 
 #ofo页面逻辑和所需接口分析
-##1.首页页面逻辑与接口分析
+## 1.首页页面逻辑与接口分析
 ![](http://upload-images.jianshu.io/upload_images/7689038-119f7972ccf7ff65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 根据效果图，很明显我们知道肯定需要一个获取单车信息的接口，接口代码如下：
@@ -188,7 +188,7 @@ PRIMARY KEY (`id`)
     }
 ```
 故障按钮分析：同样的我们需要验证是否登录，登录是否过期，否则我们跳转到登录页面。（**注意：我们需要把用户的初始位置，记录到小程序的缓存中，因为骑行记录表需要记录用户的初始位置**）
-##2.登录页面逻辑和所需接口分析
+## 2.登录页面逻辑和所需接口分析
 关于使用token令牌的好处，请自行百度，首先我先用一张图来说明微信小程序如何获取token：
 ![](http://upload-images.jianshu.io/upload_images/7689038-bafd18220fb2ef8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -210,7 +210,7 @@ PRIMARY KEY (`id`)
 ```
 
 设置token的有效期，把token存储在服务器端的缓存中，返回token，客户端获取到token，存储到缓存中，双向存储token，以后每次访问接口都携带token,更加安全，有效的防止有人伪造token获取接口的信息
-##3.个人中心页面逻辑和所需接口分析
+## 3.个人中心页面逻辑和所需接口分析
 
 ![](http://upload-images.jianshu.io/upload_images/7689038-546a221901e0f733.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -232,7 +232,7 @@ PRIMARY KEY (`id`)
 ```
 退出登录按钮：我们需要删除本地token，跳转到登录页面
 
-##4.充值页面逻辑和接口分析
+## 4.充值页面逻辑和接口分析
 
 根据效果图：我们需要一个充值的接口，因为是个人开发，没有商户号，所以微信支付就没有做，不过其实微信支付也并不难，附上微信支付的流程：
 ```
@@ -286,7 +286,7 @@ PRIMARY KEY (`id`)
     }
 ```
 
-##5.立即用车页面逻辑与接口分析
+## 5.立即用车页面逻辑与接口分析
 
 ![](http://upload-images.jianshu.io/upload_images/7689038-29053d2f52db2f09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -322,7 +322,7 @@ PRIMARY KEY (`id`)
     }
 }
 ```
-##6.计时页面逻辑和接口分析
+## 6.计时页面逻辑和接口分析
 
 ![](http://upload-images.jianshu.io/upload_images/7689038-6da49b0ba7c32fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -364,7 +364,7 @@ PRIMARY KEY (`id`)
         }
     }
 ```
-##7.故障页面逻辑和接口分析
+## 7.故障页面逻辑和接口分析
 根据效果图，我们首先需要一个获取故障分类名称的接口，接口代码如下：
 ```
  /**
@@ -438,7 +438,7 @@ public function recordTrouble($record) {
         }
     }
 ```
-##8.支付页面的逻辑和接口分析
+## 8.支付页面的逻辑和接口分析
 
 ![](http://upload-images.jianshu.io/upload_images/7689038-33714ae08978d9e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -505,7 +505,7 @@ public function recordTrouble($record) {
     }
 ```
 
-#结语
+# 结语
 到这里，ofo小程序的制作就到了尾声了。开篇我们简单进行了数据库的设计，然后一个一个页面从页面分析，到完成接口设计，分别响应着不同的业务逻辑，有的页面与页面之间有数据往来，我们就通过跳转页面传参或设置本地存储来将它们建立起联系，环环相扣，构建起了整个小程序的基本功能，使原本的ofo小程序有了灵魂。
 首先感谢慕课网和慕课网的讲师七月老师，微信小程序商城构建全栈应用这门课程对我一个还没毕业，还没有什么工作经验的小白来说影响很大，改变了我对传统互联网的看法，前后端分离，使分工更加明确，后端工程师只要专注于数据和业务，这个项目做完，使我对前后端分离理解深刻，注意代码的复用性，实践才是王道，这个项目采用了tp5框架，自定义了全局异常类，自定义验证器，加深了我对AOP思想的理解，使用restful API设计接口，更加符合规范。
 源码在我的github主页上面，需要的请移步下载[github链接](https://github.com/yefangyong/ofo)，如果喜欢，请给一个start，谢谢
