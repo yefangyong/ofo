@@ -18,6 +18,6 @@ class Index extends Controller
     }
 
     public function welcome() {
-        return "欢迎访问ofo小程序后台管理系统";
+        return "欢迎访问享骑单车小程序后台管理系统";
     }
 }

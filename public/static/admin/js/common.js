@@ -33,9 +33,9 @@ $("#yfycms-button-submit").click(function(){
     jump_url=SCOPE.jump_url;
     $.post(url,postData,function($result){
         if($result.status == 1){
-            return dialog.success($result.message,jump_url);
+            return dialogs.success($result.message,jump_url);
         }else if($result.status == 0){
-            return dialog.error($result.message);
+            return dialogs.error($result.message);
         }
     },"JSON");
 });

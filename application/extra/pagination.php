@@ -7,5 +7,13 @@
  */
 return [
     'page'=>1,
-    'list_rows'=>4
+    'list_rows'=>2,
+    'user'=>[
+        'page'=>1,
+        'list_row'=>10
+    ],
+    'charge'=>[
+        'page'=>1,
+        'list_row'=>15
+    ]
 ];

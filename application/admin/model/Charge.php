@@ -39,6 +39,7 @@ class Charge extends Model
      * 获取所有的充值记录
      */
     public static function getAllCharge() {
-        return self::order('create_time','desc')->with('user')->paginate(config('pagination.list_rows'));
+        $pagination = config('pagination.charge');
+        return self::order('create_time','desc')->with('user')->paginate($pagination['list_row']);
     }
 }

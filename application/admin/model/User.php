@@ -14,6 +14,7 @@ use think\Model;
 class User extends Model
 {
     public static function getAllUser() {
-        return self::order('create_time','desc')->paginate(config('pagination.list_rows'));
+        $pagination = config('pagination.user');
+        return self::order('create_time','desc')->paginate($pagination['list_row']);
     }
 }
