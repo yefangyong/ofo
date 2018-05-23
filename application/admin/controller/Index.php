@@ -8,13 +8,18 @@
 
 namespace app\admin\controller;
 
-
+use My\RedisPackage;
+use think\cache\driver\Memcached;
 use think\Controller;
 
 class Index extends Controller
 {
     public function index() {
-       return $this->fetch();
+//        $memcache = new Memcached();
+//       session('test','测试');
+        return $this->fetch();
+
+
     }
 
     public function welcome() {

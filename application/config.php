@@ -31,7 +31,7 @@ return [
     // 扩展函数文件
     'extra_file_list'        => [THINK_PATH . 'helper' . EXT],
     // 默认输出类型
-    'default_return_type'    => 'json',
+    'default_return_type'    => 'html',
     // 默认AJAX 数据返回格式,可选json xml ...
     'default_ajax_return'    => 'json',
     // 默认JSONP格式返回的处理方法
@@ -205,9 +205,9 @@ return [
         // SESSION_ID的提交变量,解决flash上传跨域
         'var_session_id' => '',
         // SESSION 前缀
-        'prefix'         => 'think',
+        'prefix'         => '',
         // 驱动方式 支持redis memcache memcached
-        'type'           => '',
+        'type'           => 'memcached',
         // 是否自动开启 SESSION
         'auto_start'     => true,
     ],

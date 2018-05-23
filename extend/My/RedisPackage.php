@@ -5,7 +5,7 @@ class RedisPackage
 {
     protected static $handler = null;
     protected $options = [
-    'host' => '127.0.0.1',
+    'host' => '118.31.12.220',
     'port' => 6379,
     'password' => '',
     'select' => 0,

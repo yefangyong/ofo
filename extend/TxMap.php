@@ -25,7 +25,6 @@ class TxMap
         $result = doCurl($url);
         return json_decode($result,true);
     }
-
     /**
      * @param $lng
      * @param $lat

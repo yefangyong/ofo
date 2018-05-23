@@ -22,7 +22,7 @@
             {volist name="bike" id="vo"}
             <tr class="text-c">
                 <td><input name="" type="checkbox" value="{$vo.id}"></td>
-                <td>{$vo.id}</td>
+                <td>{$key+1}</td>
                 <td>{$vo.address}</td>
                 <td>{$vo.password}</td>
                 <td class="td-status"><span class="label radius {$vo.is_show ? 'label-danger':'label-success'}">{$vo.is_show|userStatus}</span></td>
