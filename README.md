@@ -1,31 +1,60 @@
-> ofo至今还没有微信小程序（很费解），每次用ofo都得去支付宝，很不方便，我用微信用的比较多，无意间在简书上面看到某人写了一个关于ofo的小程序，链接如下：[给ofo小黄车撸一个微信小程序](http://www.jianshu.com/p/3f9b78c68887)，不过数据都是模拟的，没有数据库，没有后台，这对于一个PHP（拍黄片）攻城狮来说，是可忍孰不可忍呀，刚刚学完七月老师的课程，受益匪浅，刚好自己动手做一个，说动手就动手，let's do it;
-# 先献上一波效果图吧：
+# 链接
+- 博客地址：http://yexiansen.com
+- Github地址 : https://github.com/yefangyong/ofo 
 
-![](http://upload-images.jianshu.io/upload_images/7689038-204c44614dd8bf7c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)体验版页面
+# 简介
+本项目是采用PHP语言,THINKPHP5.0框架开发的全栈应用系统。在开发这个项目时，微信还没有OFO微信小程序，又不想下载APP去使用,只能在支付宝上面使用OFO，偶然间发现某人写了一个关于OFO的微信小程序，链接如下：给ofo小黄车撸一个微信小程序，数据是模拟的，没有数据库，没有后台，所以我基于这个前端项目，设计了数据库，提供了数据支持和后台服务。
 
-![](http://upload-images.jianshu.io/upload_images/7689038-b00b7339239bd47b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)支付页面
+# 项目截图
 
-![](http://upload-images.jianshu.io/upload_images/7689038-4394c16405be2809.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)计费页面
+ ![](http://upload-images.jianshu.io/upload_images/7689038-204c44614dd8bf7c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-![](http://upload-images.jianshu.io/upload_images/7689038-c0ea09c81011ce01.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)开锁页面
+**体验版页面**
 
-![](http://upload-images.jianshu.io/upload_images/7689038-33691fe2e959a2fb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)用车页面
+![](http://upload-images.jianshu.io/upload_images/7689038-b00b7339239bd47b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-![](http://upload-images.jianshu.io/upload_images/7689038-247c015e3ed60e72.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)开锁页面
+**支付页面**
 
-![](http://upload-images.jianshu.io/upload_images/7689038-825913386dc0a444.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)充值页面
+![](http://upload-images.jianshu.io/upload_images/7689038-03862c0407a00ef6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-![](http://upload-images.jianshu.io/upload_images/7689038-1bfd8c5205e53511.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)个人中心页面
+**首页页面**
 
-![](http://upload-images.jianshu.io/upload_images/7689038-7e97f9701caf318c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)我的钱包页面
+![](http://upload-images.jianshu.io/upload_images/7689038-33691fe2e959a2fb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-![](http://upload-images.jianshu.io/upload_images/7689038-03862c0407a00ef6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)首页页面
+**用车页面**
 
-# **ofo小程序的架构体系：**
-![](http://upload-images.jianshu.io/upload_images/7689038-0639fb41282825fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-247c015e3ed60e72.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-# **小程序数据从服务器到前端交互总结：**
-![](http://upload-images.jianshu.io/upload_images/7689038-df002d6a6923605a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+**开锁页面**
+
+![](http://upload-images.jianshu.io/upload_images/7689038-c0ea09c81011ce01.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
+
+**开锁页面**
+
+![](http://upload-images.jianshu.io/upload_images/7689038-4394c16405be2809.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
+
+**计费页面**
+
+![](http://upload-images.jianshu.io/upload_images/7689038-825913386dc0a444.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
+
+**充值页面**
+
+![](http://upload-images.jianshu.io/upload_images/7689038-1bfd8c5205e53511.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
+
+**个人中心页面**
+
+![](http://upload-images.jianshu.io/upload_images/7689038-7e97f9701caf318c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
+
+**我的钱包页面**
+
+
+
+
+# ofo小程序的架构体系：
+![](http://upload-images.jianshu.io/upload_images/7689038-0639fb41282825fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
+
+# 小程序数据从服务器到前端交互总结：
+![](http://upload-images.jianshu.io/upload_images/7689038-df002d6a6923605a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600)
 
 # 数据库设计：
 **用户表：**
@@ -135,10 +164,10 @@ PRIMARY KEY (`id`)
 
 #ofo页面逻辑和所需接口分析
 ## 1.首页页面逻辑与接口分析
-![](http://upload-images.jianshu.io/upload_images/7689038-119f7972ccf7ff65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-119f7972ccf7ff65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 根据效果图，很明显我们知道肯定需要一个获取单车信息的接口，接口代码如下：
-```
+```php
 /**
      * @return false|\PDOStatement|string|\think\Collection
      * @throws BikeException
@@ -153,7 +182,7 @@ PRIMARY KEY (`id`)
     }
 ```
 立即用车按钮分析，首先我们需要先判断有没有登录，登录我们使用的是token令牌（**后面会在个人中心登录按钮讲下如何生成token令牌，如何利用tp5的缓存，使token令牌有有效期**），如果令牌存在，我们还得判断令牌是否有效，否则重新登录，如果验证通过，我们还得判断这个用户是否已经有押金，如果没有押金，跳到充值页面去充值,否则跳转到用车页面，根据分析，我们需要一个验证token是否有效的接口，接口代码如下，
-```
+```php
 /**
      * @return bool
      * @throws TokenException
@@ -172,7 +201,7 @@ PRIMARY KEY (`id`)
     }
 ```
 我们还需要一个获取用户信息的接口，判断是否有押金，接口代码如下：
-```
+```php
 /**
      * @return null|static
      * @throws UserException
@@ -190,10 +219,10 @@ PRIMARY KEY (`id`)
 故障按钮分析：同样的我们需要验证是否登录，登录是否过期，否则我们跳转到登录页面。（**注意：我们需要把用户的初始位置，记录到小程序的缓存中，因为骑行记录表需要记录用户的初始位置**）
 ## 2.登录页面逻辑和所需接口分析
 关于使用token令牌的好处，请自行百度，首先我先用一张图来说明微信小程序如何获取token：
-![](http://upload-images.jianshu.io/upload_images/7689038-bafd18220fb2ef8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-bafd18220fb2ef8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 根据效果图，我们需要获取token令牌接口，接口代码如下：
-```
+```php
  /**
      * @param $code
      * @return array
@@ -212,10 +241,10 @@ PRIMARY KEY (`id`)
 设置token的有效期，把token存储在服务器端的缓存中，返回token，客户端获取到token，存储到缓存中，双向存储token，以后每次访问接口都携带token,更加安全，有效的防止有人伪造token获取接口的信息
 ## 3.个人中心页面逻辑和所需接口分析
 
-![](http://upload-images.jianshu.io/upload_images/7689038-546a221901e0f733.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-546a221901e0f733.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 根据效果图，点击我的钱包按钮需要跳转到我的钱包页面，我们需要一个获取用户信息的接口，接口代码如下：
-```
+```php
 /**
      * @return null|static
      * @throws UserException
@@ -235,7 +264,7 @@ PRIMARY KEY (`id`)
 ## 4.充值页面逻辑和接口分析
 
 根据效果图：我们需要一个充值的接口，因为是个人开发，没有商户号，所以微信支付就没有做，不过其实微信支付也并不难，附上微信支付的流程：
-```
+```php
 商户系统和微信支付系统主要交互说明：
 步骤1：用户在商户APP中选择商品，提交订单，选择微信支付。
 步骤2：商户后台收到用户支付单，调用微信支付统一下单接口。参见【[统一下单API](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1)】。
@@ -245,7 +274,8 @@ PRIMARY KEY (`id`)
 步骤6：商户后台查询支付结果。，api参见【[查询订单API](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_2)】
 ```
 这个接口需要注意的是，从哪个页面过来的，从首页过来的，应该就是押金充值，从我的钱包页面和支付页面过来的，就应该是余额充值，根据form不同，我们数据库充值记录表里面的type就不同，type为1代表余额充值，type为1为押金充值，接口代码如下：
-```
+
+```php
 /**
      * @param $guarantee
      * 充值
@@ -288,10 +318,10 @@ PRIMARY KEY (`id`)
 
 ## 5.立即用车页面逻辑与接口分析
 
-![](http://upload-images.jianshu.io/upload_images/7689038-29053d2f52db2f09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-29053d2f52db2f09.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 根据效果图，我们需要一个获取单车密码的接口，根据用户输入的ID，获取单车的信息，如果is_show为1，服务器抛出自定义的异常，单车正在被使用，type为1，单车被报修，出现故障，不能使用，单车如果不存在，抛出异常，单车不存在。获取到单车的密码后，携带密码和单车号到结果页面，接口代码如下：
-```
+```php
 /**
      * @param $id
      * @return array|false|\PDOStatement|string|\think\Model
@@ -324,10 +354,10 @@ PRIMARY KEY (`id`)
 ```
 ## 6.计时页面逻辑和接口分析
 
-![](http://upload-images.jianshu.io/upload_images/7689038-6da49b0ba7c32fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-6da49b0ba7c32fe7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 根据效果图：计时开始时，我们需要把单车的使用状态改变，改变为正在使用状态，接口代码如下：
-```
+```php
 /**
      * @param $id
      * 修改单车的使用状态
@@ -366,7 +396,7 @@ PRIMARY KEY (`id`)
 ```
 ## 7.故障页面逻辑和接口分析
 根据效果图，我们首先需要一个获取故障分类名称的接口，接口代码如下：
-```
+```php
  /**
      * @return false|\PDOStatement|string|\think\Collection
      * 获取问题的分类信息
@@ -378,7 +408,7 @@ PRIMARY KEY (`id`)
     }
 ```
 然后提交的时候，我们需要一个记录故障的接口，这个接口中，我们首先需要判断，如果没有选择车牌损坏，则必须填写车牌号，否则服务器返回自定义的异常，请输入单车号，单车和故障很明显是多对多的关系，我们在记录的时候，还要写到另外一张表中去，有记录ID和分类ID组成的主键的表，同时我们根据单车的ID还得修改单车的状态，接口代码如下：
-```
+```php
 public function recordTrouble($record) {
         //分为两种情况，车牌损坏，车牌未损坏
        //如果有车牌号码，先判断单车是否存在，不存在，抛出异常，
@@ -440,10 +470,10 @@ public function recordTrouble($record) {
 ```
 ## 8.支付页面的逻辑和接口分析
 
-![](http://upload-images.jianshu.io/upload_images/7689038-33714ae08978d9e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-33714ae08978d9e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 根据效果图：我们需要一个记录骑行的接口，这个接口中，这里有对多张表的操作，所以我们利用了tp的事务（**注意：mysql数据引擎MyISAM不支持事务**），提高数据库数据的一致性，我们需要记录用户的开始地址，开始时间，结束地址，结束时间，总价格，用户的id，单车的id等等，我们还需要修改用户表的余额，同时修改小程序缓存的余额，**关键点的是，我们还要再次获取用户的地址，及时修改单车的使用状态和位置，便于其他用户的使用，小黄车没有GPS定位系统，而是巧妙的利用了用户的地址**，这里我们看下小黄车的整个使用流程：
-![](http://upload-images.jianshu.io/upload_images/7689038-c4a7dc28519c0c4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7689038-c4a7dc28519c0c4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 接口代码如下：
 ```
@@ -506,6 +536,8 @@ public function recordTrouble($record) {
 ```
 
 # 结语
-到这里，ofo小程序的制作就到了尾声了。开篇我们简单进行了数据库的设计，然后一个一个页面从页面分析，到完成接口设计，分别响应着不同的业务逻辑，有的页面与页面之间有数据往来，我们就通过跳转页面传参或设置本地存储来将它们建立起联系，环环相扣，构建起了整个小程序的基本功能，使原本的ofo小程序有了灵魂。
-首先感谢慕课网和慕课网的讲师七月老师，微信小程序商城构建全栈应用这门课程对我一个还没毕业，还没有什么工作经验的小白来说影响很大，改变了我对传统互联网的看法，前后端分离，使分工更加明确，后端工程师只要专注于数据和业务，这个项目做完，使我对前后端分离理解深刻，注意代码的复用性，实践才是王道，这个项目采用了tp5框架，自定义了全局异常类，自定义验证器，加深了我对AOP思想的理解，使用restful API设计接口，更加符合规范。
-源码在我的github主页上面，需要的请移步下载[github链接](https://github.com/yefangyong/ofo)，如果喜欢，请给一个start，谢谢
+> - 到这里，ofo小程序的制作就到了尾声了。开篇我们简单进行了数据库的设计，然后一个一个页面从页面分析，到完成接口设计，分别响应着不同的业务逻辑，有的页面与页面之间有数据往来，我们就通过跳转页面传参或设置本地存储来将它们建立起联系，环环相扣，构建起了整个小程序的基本功能，使原本的ofo小程序有了灵魂。
+
+> - 这个项目做完，使我对前后端分离理解深刻，注意代码的复用性，实践才是王道，这个项目采用了tp5框架，自定义了全局异常类，自定义验证器，加深了我对AOP思想的理解，使用restful API设计接口，更加符合规范。
+
+> - 源码在我的github主页上面，需要的请移步下载[github链接](https://github.com/yefangyong/ofo)，如果喜欢，请给一个start，谢谢
