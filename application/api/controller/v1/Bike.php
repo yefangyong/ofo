@@ -29,7 +29,9 @@ class Bike extends Base
     }
 
     /**
+     * @param int $type
      * @param $id
+     * @return bool
      * 修改单车的使用状态
      */
     public function updateBikeStatus($type = 0,$id) {
