@@ -28,6 +28,7 @@ class Bike extends Base
         return $bikes;
     }
 
+
     /**
      * @param int $type
      * @param $id
